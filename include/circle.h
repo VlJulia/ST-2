@@ -8,8 +8,8 @@ class Circle {
     double ference;
     double area;
 
-   public:
-    Circle(double radius_ = 0) {
+    public:
+    explicit Circle(double radius_ = 0) {
         setRadius(radius_);
     }
     bool setRadius(double radius_);
