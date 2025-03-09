@@ -1,7 +1,7 @@
 // Copyright 2022 UNN-CS
-#include <cstdint>
-#include <circle.h>
 #include <tasks.h>
+#include <circle.h>
+#include <cstdint>
 
 double Pool() {
     Circle pool_circle(3);
