@@ -52,11 +52,6 @@ TEST(TestClass, negativeFerenceTest) {
     ASSERT_ANY_THROW(c.setFerence(-1));
 }
 
-TEST(TestClass, piTest) {
-    Circle c(1);
-    EXPECT_FLOAT_EQ(2 * PI, c.getFerence());
-}
-
 TEST(TestClass, setRadiusTest) {
     Circle c(100);
     double ans = 1.25;
@@ -76,4 +71,98 @@ TEST(TestClass, setFerenceTest) {
     double ans = 1.25;
     c.setFerence(ans);
     EXPECT_EQ(ans, c.getFerence());
+}
+
+TEST(TestClass, areaFromRadiusTest) {
+    Circle c(100), c2(1);
+    c2.setRadius(c.getRadius());
+    EXPECT_FLOAT_EQ(c.getArea(), c2.getArea());
+}
+
+TEST(TestClass, radiusFromAreaTest) {
+    Circle c(100), c2(1);
+    c2.setArea(c.getArea());
+    EXPECT_FLOAT_EQ(c.getRadius(), c2.getRadius());
+}
+
+TEST(TestClass, radiusFromFerenceTest) {
+    Circle c(100), c2(1);
+    c2.setFerence(c.getFerence());
+    EXPECT_FLOAT_EQ(c.getRadius(), c2.getRadius());
+}
+
+TEST(TestClass, ferenceFromRadiusTest) {
+    Circle c(100), c2(1);
+    c2.setRadius(c.getRadius());
+    EXPECT_FLOAT_EQ(c.getFerence(), c2.getFerence());
+}
+
+TEST(TestClass, ferenceFromAreaTest) {
+    Circle c(100), c2(1);
+    c2.setArea(c.getArea());
+    EXPECT_FLOAT_EQ(c.getFerence(), c2.getFerence());
+}
+
+TEST(TestClass, areaFromFerenceTest) {
+    Circle c(100), c2(1);
+    c2.setFerence(c.getFerence());
+    EXPECT_FLOAT_EQ(c.getArea(), c2.getArea());
+}
+
+TEST(TestClass, piTestFerence) {
+    Circle c(1);
+    EXPECT_FLOAT_EQ(2 * PI, c.getFerence());
+}
+
+TEST(TestClass, piTestArea) {
+    Circle c(1);
+    EXPECT_FLOAT_EQ(PI, c.getArea());
+}
+
+TEST(TestClass, piTestRadius) {
+    Circle c(100), c2(1);
+    c.setArea(c2.getArea());
+    EXPECT_FLOAT_EQ(1, c.getRadius());
+}
+
+TEST(TestClass, someRadiusTest1) {
+    Circle c(40);
+    EXPECT_FLOAT_EQ(2 * PI * 40, c.getFerence());
+    EXPECT_FLOAT_EQ(40 * 40 * PI, c.getArea());
+}
+
+TEST(TestClass, someRadiusTest2) {
+    Circle c(17);
+    EXPECT_FLOAT_EQ(2 * PI * 17, c.getFerence());
+    EXPECT_FLOAT_EQ(17 * 17 * PI, c.getArea());
+}
+
+TEST(TestClass, someRadiusTest3) {
+    Circle c(77);
+    EXPECT_FLOAT_EQ(2 * PI * 77, c.getFerence());
+    EXPECT_FLOAT_EQ(77 * 77 * PI, c.getArea());
+}
+
+TEST(TestClass, someFerenceTest1) {
+    Circle c(77);
+    c.setFerence(77);
+    EXPECT_FLOAT_EQ(77 / (2 * PI), c.getRadius());
+}
+
+TEST(TestClass, someFerenceTest2) {
+    Circle c(5);
+    c.setFerence(5);
+    EXPECT_FLOAT_EQ(5 / (2 * PI), c.getRadius());
+}
+
+TEST(TestClass, someAreaTest1) {
+    Circle c(99);
+    c.setArea(99);
+    EXPECT_FLOAT_EQ(std::sqrt(99 / PI), c.getRadius());
+}
+
+TEST(TestClass, someAreaTest2) {
+    Circle c(32);
+    c.setArea(32);
+    EXPECT_FLOAT_EQ(std::sqrt(32 / PI), c.getRadius());
 }
