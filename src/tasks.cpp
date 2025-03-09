@@ -17,5 +17,5 @@ double Rope() {
     Circle Earch(637810);
     double area_was = Earch.getArea();
     Earch.setFerence(Earch.getFerence() + 1);
-    return area_was - Earch.getArea();
+    return Earch.getArea() - area_was;
 }
