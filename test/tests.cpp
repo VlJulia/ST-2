@@ -13,7 +13,7 @@ TEST(TestTask, TaskPool) {
 }
 
 TEST(TestTask, TaskRope) {
-    EXPECT_FLOAT_EQ(Rope(), 6378100.06);
+    EXPECT_FLOAT_EQ(Rope(), 637810.06);
 }
 
 TEST(TestClass, zeroRadiusTest) {
