@@ -9,12 +9,10 @@
 const double PI = std::acos(-1);
 
 TEST(TestTask, TaskPool) {
-    EXPECT_EQ(1, 1);
     EXPECT_FLOAT_EQ(Pool(), 72256.633);
 }
 
 TEST(TestTask, TaskRope) {
-    EXPECT_EQ(1, 1);
     EXPECT_FLOAT_EQ(Rope(), 6378100.06);
 }
 
