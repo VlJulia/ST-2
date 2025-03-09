@@ -8,7 +8,7 @@ class Circle {
     double ference;
     double area;
 
-        public:
+ public:
     explicit Circle(double radius_ = 0) {
         setRadius(radius_);
     }
